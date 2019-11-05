@@ -6,7 +6,7 @@ class ShowsController < ApplicationController
 
     def show 
         show = Show.find(params[:id])
-        render json: {show: show}
+        render json: {show: show.time.strfttime(' %a %d %b %Y %H %I %p') }
     end 
 
 end 

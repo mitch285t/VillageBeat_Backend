@@ -11,7 +11,7 @@ class UsersController < ApplicationController
 
     end
 
-    def profile 
+    def profile
         render json: {user: @user, bands: @user.bands}, status: :accepted
     end 
 
