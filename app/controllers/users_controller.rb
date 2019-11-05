@@ -12,7 +12,7 @@ class UsersController < ApplicationController
     end
 
     def profile 
-        render json: {user: @user}, status: :accepted
+        render json: {user: @user, bands: @user.bands}, status: :accepted
     end 
 
 
@@ -21,7 +21,6 @@ class UsersController < ApplicationController
     
         if @user.valid?
             @user.update(wallet: 0)
-            @user.update(profilepic: "example")
             @token = encode_token(user_id: @user.id)
           render json: { user: @user, jwt: @token }, status: :created
           
@@ -32,7 +31,7 @@ class UsersController < ApplicationController
       end
     private
     def user_params
-        params.require(:user).permit(:name, :email, :wallet, :profilepic, :password, :password_confirmation)
+        params.permit(:name, :email,  :password, :password_confirmation, :wallet)
     end 
 
    end

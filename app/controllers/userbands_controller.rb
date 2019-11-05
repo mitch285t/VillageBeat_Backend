@@ -7,13 +7,20 @@ class UserbandsController < ApplicationController
 
     end 
 
+    def create
+        @userband = Userband.create(userband_params)
+        render json: {userband: @userband}
+      end
 
 
 
 
 
+      private 
 
-
+      def userband_params 
+        params.require(:userband).permit(:user_id, :band_id)
+      end 
 
 
 
