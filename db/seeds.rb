@@ -53,7 +53,7 @@ time: DateTime.new(@date[:year][rand(0..1)],
   
 end 
 5.times do 
-    UserBand.create(
+    Userband.create(
         user_id: 1, 
         band_id: rand(1..100)
     )

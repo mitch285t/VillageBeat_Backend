@@ -6,6 +6,7 @@ def index
 end
 def show 
     band = Band.find(params[:id])
-    render json: {band: band}
+    render json: {band: band, shows: band.shows, venues: band.venues, genres: band.genres}
 end
+
 end 
