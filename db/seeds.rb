@@ -50,7 +50,7 @@ time: DateTime.new(@date[:year][rand(0..1)],
 @date[:day][rand(0..29)],
 @date[:hour][rand(0..11)],
 @date[:min][rand(0..1)]))
-  
+
 end 
 5.times do 
     Userband.create(
