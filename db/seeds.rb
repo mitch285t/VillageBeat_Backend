@@ -5,7 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Ring:s' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-100.times do 
+150.times do 
     Band.create(
         name: Faker::Music.band,
         wallet: 1
@@ -17,7 +17,7 @@ end
 
     )
 end
-100.times do 
+50.times do 
     Bandgenre.create(
         band_id: rand(1..100),
         genre_id: rand(1..10)
@@ -41,9 +41,9 @@ User.create(name:"hal",email:"hal@hal.com",wallet:2,profilepic:"pic",password:"p
 }
 
 
-70.times do 
+90.times do 
     Show.create(
-band_id: rand(1..100),
+band_id: rand(1..50),
 venue_id: rand(1..6),
 time: DateTime.new(@date[:year][rand(0..1)],
 @date[:month][rand(0..11)],
@@ -51,10 +51,7 @@ time: DateTime.new(@date[:year][rand(0..1)],
 @date[:hour][rand(0..11)],
 @date[:min][rand(0..1)]))
 
+
 end 
-5.times do 
-    Userband.create(
-        user_id: 1, 
-        band_id: rand(1..100)
-    )
-end
+
+
