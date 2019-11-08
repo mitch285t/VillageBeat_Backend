@@ -44,6 +44,6 @@ class UsersController < ApplicationController
     end 
 
     def user_wallet_params
-      params.require(:user).permit(:wallet)
+      params.permit(:wallet)
 
    end

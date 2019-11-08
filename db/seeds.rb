@@ -33,7 +33,7 @@ Venue.create(name:"The Grove Wine Bar & Kitchen",lat:30.270695,lng:97.750845,loc
 User.create(name:"hal",email:"hal@hal.com",wallet:2,profilepic:"pic",password:"password")
 @date = 
 {
-:year=>[2019, 2020], 
+:year=>[2020], 
 :month=>(1..12).to_a, 
 :day=>(1..31).to_a, 
 :hour=>(1..12).to_a, 
@@ -45,7 +45,7 @@ User.create(name:"hal",email:"hal@hal.com",wallet:2,profilepic:"pic",password:"p
     Show.create(
 band_id: rand(1..50),
 venue_id: rand(1..6),
-time: DateTime.new(@date[:year][rand(0..1)],
+time: DateTime.new(@date[:year][rand(0)],
 @date[:month][rand(0..11)],
 @date[:day][rand(0..29)],
 @date[:hour][rand(0..11)],
