@@ -8,16 +8,17 @@
 150.times do 
     Band.create(
         name: Faker::Music.band,
-        wallet: 1
+        wallet: 1,
+        desc: Faker::Lorem.paragraph(sentence_count: 2, supplemental: true, random_sentences_to_add: 3)
     )
 end
-10.times do 
+13.times do 
     Genre.create(
         name: Faker::Music.genre,
 
     )
 end
-50.times do 
+150.times do 
     Bandgenre.create(
         band_id: rand(1..100),
         genre_id: rand(1..10)
@@ -30,7 +31,10 @@ Venue.create(name:"The White Horse",lat:30.262818,lng:97.726963,location:"500 Co
 Venue.create(name:"Violet Crown Social Club",lat:30.264541,lng:97.730782,location:"1111 E 6th St, Austin, TX 78702")
 Venue.create(name:"Stubbs Bar-B-Q",lat:30.268702,lng:97.736243,location:"801 Red River St, Austin, TX 78701")
 Venue.create(name:"The Grove Wine Bar & Kitchen",lat:30.270695,lng:97.750845,location:"800 W 6th St #100, Austin, TX 78701")
-User.create(name:"hal",email:"hal@hal.com",wallet:2,profilepic:"pic",password:"password")
+Venue.create(name:"The Jackalope",lat:30.267268,lng:97.738925,location:"404 East 6th, Austin, TX 78701")
+Venue.create(name:"Unbarlievable",lat:30.258925,lng:97.738972,location:"76 Rainey St, Austin, TX 78701")
+Venue.create(name:"Container Bar",lat:30.260361 ,lng:97.738406, location:"90 Rainey St, Austin, TX 78701")
+
 @date = 
 {
 :year=>[2020], 
@@ -41,10 +45,10 @@ User.create(name:"hal",email:"hal@hal.com",wallet:2,profilepic:"pic",password:"p
 }
 
 
-90.times do 
+200.times do 
     Show.create(
-band_id: rand(1..50),
-venue_id: rand(1..6),
+band_id: rand(1..150),
+venue_id: rand(1..8),
 time: DateTime.new(@date[:year][rand(0)],
 @date[:month][rand(0..11)],
 @date[:day][rand(0..29)],

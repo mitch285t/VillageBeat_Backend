@@ -7,7 +7,9 @@ class ShowsController < ApplicationController
 
     def show 
         show = Show.find(params[:id])
-        render json: {show: show.time, band: show.band, venue: show.venue }
+        band = show.band 
+        genres = band.genres
+        render json: {show: show.time, band: show.band, venue: show.venue, genre: genres }
     end 
 
 end 
