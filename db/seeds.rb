@@ -5,23 +5,24 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Ring:s' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-150.times do 
+100.times do 
     Band.create(
-        name: Faker::Music.band,
+        name: Faker::Music.unique.band,
         wallet: 1,
-        desc: Faker::Lorem.paragraph(sentence_count: 2, supplemental: true, random_sentences_to_add: 3)
+        desc: Faker::Lorem.paragraph(sentence_count: 6, supplemental: true, random_sentences_to_add: 3)
+       
     )
 end
 13.times do 
     Genre.create(
-        name: Faker::Music.genre,
+        name: Faker::Music.unique.genre,
 
     )
 end
-150.times do 
+120.times do 
     Bandgenre.create(
-        band_id: rand(1..100),
-        genre_id: rand(1..10)
+        band_id: rand(1..150),
+        genre_id: rand(1..13)
     )
 
 end 

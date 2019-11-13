@@ -11,7 +11,7 @@ def show
     ordered = shows.order(:time)
     venues = band.venues
     orderedvenues = venues.order(:time)
-    render json: {band: band, shows: ordered, venues: orderedvenues, genres: band.genres}
+    render json: {band: band, shows: ordered, venues: orderedvenues, genres: band.genres.limit(1)}
 end
 
 def update
